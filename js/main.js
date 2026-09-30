@@ -144,6 +144,10 @@
       document.title = app.name + " Review — Features, Pros & Cons, Setup | SignalLab";
       var md = $('meta[name="description"]');
       if (md) md.setAttribute("content", app.name + " review: key features, supported platforms, EPG and playlist support, strengths, limitations, and a quick setup walkthrough.");
+      var cl = document.createElement("link");
+      cl.rel = "canonical";
+      cl.href = location.origin + location.pathname + "?id=" + app.id;
+      document.head.appendChild(cl);
       $("#a-tile").innerHTML = tileHTML(app, true);
       $("#a-name").textContent = app.name;
       $("#a-crumb").textContent = app.name;
@@ -224,6 +228,10 @@
       document.title = post.title + " | SignalLab";
       var md2 = $('meta[name="description"]');
       if (md2) md2.setAttribute("content", post.excerpt);
+      var cl2 = document.createElement("link");
+      cl2.rel = "canonical";
+      cl2.href = location.origin + location.pathname + "?id=" + post.id;
+      document.head.appendChild(cl2);
       $("#p-cat").textContent = post.cat;
       $("#p-crumb").textContent = post.title.length > 46 ? post.title.slice(0, 46) + "…" : post.title;
       $("#p-title").textContent = post.title;

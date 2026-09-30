@@ -51,9 +51,15 @@ directly.
 
 ## Deployment notes
 
-- The domain `https://www.signallab.tv/` is a **placeholder** — replace it in every
-  `<link rel="canonical">`, `og:url`, JSON-LD block, `sitemap.xml` and `robots.txt`
-  before publishing for real.
+- The site is deployed via GitHub Pages at `https://lafi98.github.io/blog/`, and all
+  canonical URLs, `og:url`, JSON-LD, `sitemap.xml` and `robots.txt` point there. If a
+  custom domain is added later, replace that base URL in `src-pages/*.html`,
+  `sitemap.xml` and `robots.txt`, then rerun `build.py`. Detail pages
+  (`app.html?id=`, `article.html?id=`) inject their canonical dynamically from
+  `location.origin`, so they follow the domain automatically.
+- Note: on a GitHub Pages *project* site, `robots.txt` is served under `/blog/` where
+  crawlers don't read it — harmless. Submit the sitemap directly in Google Search
+  Console instead.
 - The contact form is front-end only (labelled as a demo on the page).
 - Review scores are editorial judgements with an open methodology at
   `best-iptv-players.html#methodology` — no fabricated lab results, user numbers
